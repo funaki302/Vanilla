@@ -1,0 +1,95 @@
+/* === Styles communs === */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 450px;
+    width: 100%;
+}
+
+.login-card h1 { font-weight: bold; }
+.form-label { font-weight: 500; }
+
+.btn-primary { border: none; }
+.btn-primary:hover { opacity: 0.9; }
+
+.link-highlight { font-weight: bold; text-decoration: none; }
+.link-highlight:hover { text-decoration: underline; }
+
+/* === Styles spécifiques par page === */
+#proprietaire {
+    background: linear-gradient(135deg, #4f8ef7, #1c3d73);
+}
+#proprietaire h1 { color: #1c3d73; }
+#proprietaire .btn-primary { background: #4f8ef7; }
+
+#locataire {
+    background: linear-gradient(135deg, #1cb5e0, #000851);
+}
+#locataire h1 { color: #000851; }
+#locataire .btn-primary { background: #1cb5e0; }
+
+#client {
+    background: linear-gradient(135deg, #ff8008, #ffc837);
+}
+#client h1 { color: #b35400; }
+#client .btn-primary { background: #ff8008; }
+
+#inscription {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+#inscription h1 { color: #0c6b62; }
+#inscription .btn-primary { background: #11998e; }
+
+/* === Page Détails Maison === */
+body.details-trano {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+}
+
+.property-img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.property-img:hover {
+    transform: scale(1.05);
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+}
+
+.animate-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Optionnel : centrage complet de la carte */
+.details-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 3rem;
+}
+
