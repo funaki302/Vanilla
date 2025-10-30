@@ -8,7 +8,7 @@ function login($email,$pwd)
     $resultat = mysqli_query(dbconnect(),$sql);
     $return = mysqli_fetch_assoc($resultat);
     if ($return != null) {
-        return true;
+        return $return;
     } else {
         return false;
     }
