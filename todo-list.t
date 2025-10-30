@@ -18,4 +18,4 @@ Page publication :
        -> [] view_publication_commentaire ;
 
  [] - traitement.php :
-       -> [] code=2 -> publication + commentaire
+       -> [] code=2 -> [ok]publication + commentaire
