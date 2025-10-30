@@ -1,5 +1,5 @@
+<?php session_start(); ?>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Publications</title>
@@ -73,7 +73,7 @@
 
 <body>
     <div class="header">
-        <h2>Publications</h2>
+        <h2>Publications  de <?= $_SESSION['nom_membre'] ?> </h2>
         <a href="logout.php">Déconnexion</a>
     </div>
 

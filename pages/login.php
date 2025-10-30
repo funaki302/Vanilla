@@ -52,7 +52,7 @@
                     }
                     
                 };
-                xhr.open("POST", "traitement?code=1.php");
+                xhr.open("POST", "traitement.php?code=1");
                 // Les données envoyées sont ce que l'utilisateur a mis dans le formulaire
                 xhr.send(formData);
             }
@@ -68,8 +68,6 @@
             });
         });
     </script>
-
-
 
 </head>
 
