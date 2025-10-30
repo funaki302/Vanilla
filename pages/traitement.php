@@ -8,7 +8,7 @@ if ($code == 1) {
     $mdp = $_POST['mdp'];
 
     $resultat_log = login($email, $mdp);
-    $_SESSION['nom_membre'] = $resultat_log['nom'];
+    $_SESSION['user'] = $resultat_log;
 
     header("Content-Type: application/json");
     sleep(4);
@@ -18,7 +18,16 @@ if ($code == 1) {
         echo json_encode(false);
     }
 } else if ($code == 2) {
+    $id_user = $_POST['id_user'];
+    $texte = $_POST['texte'];
     
+    header("Content-Type: application/json");
+    if(set_new_pub($id_user,$texte)){
+        $pubs = get_all_pub();
+        echo json_encode($pubs);
+    } else{
+        echo json_encode(false);
+    }
 }
 
 

@@ -27,13 +27,16 @@ function set_new_pub($id_user,$contenue){
 
 function get_all_pub(){
     $sql = "SELECT * FROM publications";
-    $result = mysqli_query(dbconnect(),$sql);
+    $result = mysqli_query(dbconnect(), $sql);
+
     $tab = [];
-    if($result){
-        while($row = mysqli_fetch_assoc($result)){
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
             $tab[] = $row;
         }
     }
+
     return $tab;
 }
 
@@ -50,16 +53,17 @@ function set_new_comment($comment,$id_pub,$id_user){
 
 function get_all_comment_by_pub_id($id_pub){
     $sql = "SELECT * FROM commentaire WHERE id_pub = '$id_pub' ORDER BY date_commentaire DESC";
-    $result = mysqli_query(dbconnect(),$sql);
-    $retour = [];
-    if($result){
-        while($row = mysqli_fetch_assoc($result)){
-            $retour[] = $row;
+    $result = mysqli_query(dbconnect(), $sql);
+
+    $tab = [];
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $tab[] = $row;
         }
-        return $retour;
-    } else{
-        return null;
     }
+
+    return $tab;
 }
 
 ?>

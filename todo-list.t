@@ -3,12 +3,12 @@ Page publication :
        -> [ok] table commentaire 
        -> [ok] table publication
 
- [] - publication.php :
+ [ok] - publication.php :
        -> [ok] input pour publier
        -> [ok] input pour commenter
-       -> [] script -> traitement.php?code=2
+       -> [ok] script -> traitement.php?code=2
 
- [] - function.php :
+ [ok] - function.php :
        -> [ok] set_new_pub ;
        -> [ok] get_all_pub ;
        -> [ok] set_new_comment ;
