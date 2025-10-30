@@ -9,10 +9,10 @@ Page publication :
        -> [] script -> traitement.php?code=2
 
  [] - function.php :
-       -> [] set_new_pub ;
-       -> [] get_all_pub ;
-       -> [] set_new_comment ;
-       -> [] get_all_comment_by_pub_id ;
+       -> [ok] set_new_pub ;
+       -> [ok] get_all_pub ;
+       -> [ok] set_new_comment ;
+       -> [ok] get_all_comment_by_pub_id ;
 
  [] - view.sql:
        -> [] view_publication_commentaire ;
