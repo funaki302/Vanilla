@@ -28,7 +28,7 @@ if ($code == 1) {
     } else{
         echo json_encode(false);
     }
-}
+ } 
 
 
 ?>

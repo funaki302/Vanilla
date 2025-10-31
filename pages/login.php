@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hofantrano - Connexion</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-
+     <script>
+        window.addEventListener("load", function() {
+        var erreur = document.querySelector(".alert-danger");
+        if (erreur) {
+            setTimeout(function() {
+                erreur.remove();
+            }, 5000);
+        }
+    });
+    </script>
     <script type="text/javascript">
         //Les codes ci dessous sont executé lors que la page est chargée
         window.addEventListener("load", function () {
             function sendData() {
                 var xhr = new XMLHttpRequest();
+                var chargementElement = document.getElementById("proprietaire");
 
                 // Liez l'objet FormData et l'élément form
                 var formData = new FormData(form);
@@ -35,19 +45,21 @@
                         if (xhr.status === 200) {
                             var response = JSON.parse(xhr.responseText);
                             if (response) {
+                                chargementElement.remove();
                                 // Rediriger vers la page publication.php en cas de succès
                                 window.location.href = "publication.php";
                             } else {
+                                chargementElement.remove();
                                 // Afficher un message d'erreur en cas d'échec
-                                alert("Impossible de se connecter en tant que propriétaire !");
+                                window.location.href = "login.php?error=1";
                             }
                         } else {
+                            chargementElement.remove();
                             alert("Erreur lors de la requête. Statut : " + xhr.status);
                         }
                     } else if (xhr.readyState < 4) {
                         // Optionnel : afficher un message de chargement
                         console.log("Chargement en cours...");
-                        var chargementElement = document.getElementById("proprietaire");
                         chargementElement.innerHTML = "<img src=\"../assets/Loading_icon.gif\" alt=\"\" class=\"mx-auto d-block\">";
                     }
                     

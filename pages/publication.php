@@ -147,7 +147,7 @@ $pubs = get_all_pub();
         <div id="listePubs">
             <?php if($pubs != null){
                 foreach ($pubs as $pub) { ?>
-                    <div class="row">
+                    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
                         <p><strong>Publication de: <?= $pub['id_membre'] ?> </strong> (<?= $pub['date_de_pub'] ?>)</p>
                         <p class="text-center"><?= $pub['contenue'] ?></p>
                     </div>

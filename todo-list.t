@@ -18,4 +18,15 @@ Page publication :
        -> [] view_publication_commentaire ;
 
  [] - traitement.php :
-       -> [] code=2 -> [ok]publication + commentaire
+       -> [ok] code=2 -> publication 
+       -> [] code=3 -> [] commentaire
+
+ [] - commentaire.php :
+       -> [] afficher la publication
+       -> [] afficher tous les commentaires de cette pub 
+ 
+ [ok] - function.php :
+       -> [ok] get_pub_by_id;
+
+ [] - publication.php :
+       -> [] ajouter bouton "Commenter" pour chaque pub

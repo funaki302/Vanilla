@@ -66,4 +66,15 @@ function get_all_comment_by_pub_id($id_pub){
     return $tab;
 }
 
+function get_pub_by_id($id_pub){
+    $sql = "SELECT * FROM publications WHERE id_pub = '$id_pub' ORDER BY date_de_pub DESC";
+    $result = mysqli_query(dbconnect(), $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_assoc($result);
+    }
+
+    return false;
+}
+
 ?>
